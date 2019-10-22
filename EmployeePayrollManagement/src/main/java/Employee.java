@@ -36,4 +36,11 @@ public class Employee{
     public PaymentClassification getPayClassification() {
         return payClassification;
     }
+    public String getName(){
+        return this.name;
+    }
+
+    public int getId() {
+        return id;
+    }
 }

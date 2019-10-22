@@ -8,6 +8,6 @@ public class DirectDepositMethod implements PaymentMethod{
 
     @Override
     public String toString() {
-        return "direct deposit into ING : "+account;
+        return "direct deposit into "+name+" : "+account;
     }
 }
