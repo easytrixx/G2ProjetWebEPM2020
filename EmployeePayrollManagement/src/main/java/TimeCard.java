@@ -7,4 +7,8 @@ public class TimeCard {
         this.date=date;
         this.hour=hour;
     }
+
+    public double getHours() {
+        return hour;
+    }
 }

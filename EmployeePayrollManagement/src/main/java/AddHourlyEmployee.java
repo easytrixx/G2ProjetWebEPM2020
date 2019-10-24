@@ -1,4 +1,8 @@
 public class AddHourlyEmployee extends AddEmployee{
+    public double getHours() {
+        return hourlyRate;
+    }
+
     double hourlyRate;
     public AddHourlyEmployee(int id, String name, String adresse, double hourlyRate){
         super(id,name,adresse);
