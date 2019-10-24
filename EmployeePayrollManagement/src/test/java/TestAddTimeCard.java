@@ -21,5 +21,6 @@ public class TestAddTimeCard {
         AddTimeCard atc=new AddTimeCard(empId,date,20);
         atc.execute();
         assertEquals(atc.hours,t.getHours(),0.01);
+        assertEquals(atc.date,atc.card.getDate());
     }
 }

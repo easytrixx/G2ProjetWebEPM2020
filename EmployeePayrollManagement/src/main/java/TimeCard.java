@@ -11,4 +11,8 @@ public class TimeCard {
     public double getHours() {
         return hour;
     }
+
+    public Calendar getDate() {
+        return date;
+    }
 }

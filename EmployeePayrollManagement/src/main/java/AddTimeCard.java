@@ -6,6 +6,7 @@ public class AddTimeCard implements Command {
     int empId;
     Calendar date;
     double hours;
+    TimeCard card;
     @Override
     public void execute() {
         Employee e = Context.emp.getEmployee(empId);
@@ -13,7 +14,7 @@ public class AddTimeCard implements Command {
         if(e!=null) {
             if(ps instanceof HourlyClassification){
                 HourlyClassification u=(HourlyClassification) ps;
-                AddTimeCard tm=new AddTimeCard(empId,date,hours);
+                card=new TimeCard(date,hours);
             }
             else{
                 throw new IllegalStateException("Pas le bon type");
