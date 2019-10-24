@@ -1,3 +1,17 @@
+import be.heh.epm.classification.HourlyClassification;
+import be.heh.epm.classification.PaymentClassification;
+import be.heh.epm.classification.SalariedClassification;
+import be.heh.epm.commission.CommisionnedClassification;
+import be.heh.epm.commission.SalesReceipt;
+import be.heh.epm.employee.Employee;
+import be.heh.epm.method.DirectDepositMethod;
+import be.heh.epm.method.MailMethod;
+import be.heh.epm.method.PaymentMethod;
+import be.heh.epm.schedule.DoubleWeekSchedule;
+import be.heh.epm.schedule.MonthlyPaymentSchedule;
+import be.heh.epm.schedule.PaymentSchedule;
+import be.heh.epm.schedule.WeeklyPaymentSchedule;
+import be.heh.epm.timecard.TimeCard;
 import org.junit.Before;
 import org.junit.Test;
 

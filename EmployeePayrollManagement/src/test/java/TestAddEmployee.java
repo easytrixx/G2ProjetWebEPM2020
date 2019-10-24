@@ -1,5 +1,12 @@
 import static org.junit.Assert.*;
 
+import be.heh.epm.employee.AddSalariedEmployee;
+import be.heh.epm.employee.Context;
+import be.heh.epm.employee.Employee;
+import be.heh.epm.method.PaymentMethod;
+import be.heh.epm.schedule.MonthlyPaymentSchedule;
+import be.heh.epm.schedule.PaymentSchedule;
+import be.heh.epm.schedule.WeeklyPaymentSchedule;
 import org.junit.Before;
 import org.junit.Test;
 

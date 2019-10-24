@@ -1,3 +1,6 @@
+import be.heh.epm.employee.Employee;
+import be.heh.epm.employee.EmployeeGateway;
+
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,3 +1,5 @@
+import be.heh.epm.commission.AddCommisionnedEmployee;
+import be.heh.epm.commission.AddCommission;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,7 +22,7 @@ public class TestAddCommission {
         Calendar date = new GregorianCalendar(2019,10,1);
         AddCommission atc=new AddCommission(date,40,empId);
         atc.execute();
-        assertEquals(atc.date,atc.sr.getDate());
-        assertEquals(atc.amount,atc.sr.getSalesAmount(),0.01);
+        assertEquals(atc.getDate(),atc.getSr().getDate());
+        assertEquals(atc.getAmount(),atc.getSr().getSalesAmount(),0.01);
     }
 }

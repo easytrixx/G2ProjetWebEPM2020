@@ -1,3 +1,6 @@
+
+import be.heh.epm.hourly.AddHourlyEmployee;
+import be.heh.epm.timecard.AddTimeCard;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,7 +23,7 @@ public class TestAddTimeCard {
         Calendar date = new GregorianCalendar(2019,10,1);
         AddTimeCard atc=new AddTimeCard(empId,date,20);
         atc.execute();
-        assertEquals(atc.hours,t.getHours(),0.01);
-        assertEquals(atc.date,atc.card.getDate());
+        assertEquals(atc.getHours(),t.getHours(),0.01);
+        assertEquals(atc.getDate(),atc.getCard().getDate());
     }
 }
