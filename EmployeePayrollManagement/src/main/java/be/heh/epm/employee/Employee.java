@@ -49,4 +49,14 @@ public class Employee{
     public int getId() {
         return id;
     }
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getAdresse() {
+        return adresse;
+    }
+
 }

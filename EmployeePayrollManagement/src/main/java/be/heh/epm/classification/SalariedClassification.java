@@ -10,4 +10,7 @@ public class SalariedClassification implements PaymentClassification{
     public double calculationSalary() {
         return salary;
     }
+    public double getSalary() {
+        return salary;
+    }
 }

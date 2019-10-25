@@ -59,7 +59,7 @@ public class TestEmployee {
         ((HourlyClassification)classification).addTimeCard(new TimeCard(date, 8.0));
         ((HourlyClassification)classification).addTimeCard(new TimeCard(nextDate, 10.0));
 
-        assertEquals(360.0,employee.calculatePay(),0.01);
+        assertEquals(200,employee.calculatePay(),0.01);
 
         PaymentSchedule ps = employee.getPaySchedule();
         assertTrue(ps instanceof WeeklyPaymentSchedule);
