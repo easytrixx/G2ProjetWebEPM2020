@@ -6,18 +6,18 @@ import be.heh.epm.employee.Command;
 import be.heh.epm.employee.Context;
 import be.heh.epm.employee.Employee;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class AddTimeCard implements Command {
     int empId;
-    Calendar date;
+    LocalDate date;
     double hours;
     TimeCard card;
     public void setEmpId(int empId) {
         this.empId = empId;
     }
 
-    public void setDate(Calendar date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -33,7 +33,7 @@ public class AddTimeCard implements Command {
         return empId;
     }
 
-    public Calendar getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -53,6 +53,8 @@ public class AddTimeCard implements Command {
             if(ps instanceof HourlyClassification){
                 HourlyClassification u=(HourlyClassification) ps;
                 card=new TimeCard(date,hours);
+                u.addTimeCard(card);
+                Context.emp.save(e.getId(),e);
             }
             else{
                 throw new IllegalStateException("Pas le bon type");
@@ -62,7 +64,7 @@ public class AddTimeCard implements Command {
             throw new NullPointerException("Aucun objet");
         }
     }
-    public AddTimeCard(int id, Calendar date, double hours){
+    public AddTimeCard(int id, LocalDate date, double hours){
         this.date=date;
         this.hours=hours;
         this.empId = id;

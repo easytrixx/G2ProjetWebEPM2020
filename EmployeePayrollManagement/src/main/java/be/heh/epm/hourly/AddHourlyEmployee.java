@@ -15,7 +15,6 @@ public class AddHourlyEmployee extends AddEmployee {
         super(id,name,adresse);
         this.hourlyRate=hourlyRate;
     }
-
     @Override
     public PaymentClassification makePaymentClassification() {
         return new HourlyClassification(hourlyRate);

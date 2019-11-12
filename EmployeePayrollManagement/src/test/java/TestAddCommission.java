@@ -1,10 +1,11 @@
 import be.heh.epm.commission.AddCommisionnedEmployee;
 import be.heh.epm.commission.AddCommission;
+import jdk.vm.ci.meta.Local;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.time.Month;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,7 +20,7 @@ public class TestAddCommission {
         int empId=1;
         AddCommisionnedEmployee c = new AddCommisionnedEmployee(empId, "Bob","Home",20.0,0.3);
         c.execute();
-        Calendar date = new GregorianCalendar(2019,10,1);
+        LocalDate date = LocalDate.of(2014, Month.JANUARY, 1);
         AddCommission atc=new AddCommission(date,40,empId);
         atc.execute();
         assertEquals(atc.getDate(),atc.getSr().getDate());

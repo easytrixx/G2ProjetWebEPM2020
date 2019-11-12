@@ -23,9 +23,7 @@ public abstract class AddEmployee implements Command {
         Context.emp.save(employee.getId(), employee);
         employee.setPayMethod(new DirectDepositMethod("Fortis","be332211"));
         employee.setPaySchedule(makePaymentSchedule());
-
     }
-
     public abstract PaymentClassification makePaymentClassification();
     public abstract PaymentSchedule makePaymentSchedule();
 }

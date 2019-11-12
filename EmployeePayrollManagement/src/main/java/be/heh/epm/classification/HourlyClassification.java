@@ -1,5 +1,6 @@
 package be.heh.epm.classification;
 
+import be.heh.epm.payday.PayCheck;
 import be.heh.epm.timecard.TimeCard;
 
 import java.util.*;
@@ -19,6 +20,11 @@ public class HourlyClassification implements PaymentClassification{
         }
         return salary;
     }
+    @Override
+    public void calculationPay(PayCheck pc) {
+        pc.setPay(this.calculationSalary());
+    }
+
     public void addTimeCard(TimeCard t){
         listTimeCard.put(new Date(),t);
     }

@@ -1,11 +1,11 @@
 package be.heh.epm.timecard;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class TimeCard {
-    Calendar date;
+    LocalDate date;
     double hour;
-    public TimeCard(Calendar date, double hour){
+    public TimeCard(LocalDate date, double hour){
         this.date=date;
         this.hour=hour;
     }
@@ -14,7 +14,7 @@ public class TimeCard {
         return hour;
     }
 
-    public Calendar getDate() {
+    public LocalDate getDate() {
         return date;
     }
 }

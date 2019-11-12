@@ -1,5 +1,7 @@
 package be.heh.epm.method;
 
+import be.heh.epm.payday.PayCheck;
+
 public class DirectDepositMethod implements PaymentMethod{
     String name;
     String account;
@@ -11,5 +13,10 @@ public class DirectDepositMethod implements PaymentMethod{
     @Override
     public String toString() {
         return "direct deposit into "+name+" : "+account;
+    }
+
+    @Override
+    public void pay(PayCheck pc) {
+        pc.setDisposition("Bank");
     }
 }

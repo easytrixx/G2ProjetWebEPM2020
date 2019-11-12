@@ -1,6 +1,7 @@
 package be.heh.epm.commission;
 
 import be.heh.epm.classification.PaymentClassification;
+import be.heh.epm.payday.PayCheck;
 
 import java.util.ArrayList;
 public class CommisionnedClassification implements PaymentClassification {
@@ -20,6 +21,12 @@ public class CommisionnedClassification implements PaymentClassification {
         }
         return salary;
     }
+
+    @Override
+    public void calculationPay(PayCheck pc) {
+
+    }
+
     public void addSaleReceipt(SalesReceipt s){
         listSaleReceipt.add(s);
     }

@@ -15,8 +15,8 @@ import be.heh.epm.timecard.TimeCard;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import java.time.Month;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
@@ -53,8 +53,8 @@ public class TestEmployee {
         employee.setPayMethod(new MailMethod("toto@gmail.com"));
         employee.setPaySchedule(new WeeklyPaymentSchedule());
 
-        Calendar date = new GregorianCalendar(2019,10,1);
-        Calendar nextDate = new GregorianCalendar(2019,10,2);
+        LocalDate date = LocalDate.of(2014, Month.JANUARY, 1);
+        LocalDate nextDate = LocalDate.of(2014, Month.JANUARY, 2);
         PaymentClassification classification= employee.getPayClassification();
         ((HourlyClassification)classification).addTimeCard(new TimeCard(date, 8.0));
         ((HourlyClassification)classification).addTimeCard(new TimeCard(nextDate, 10.0));
@@ -72,8 +72,8 @@ public class TestEmployee {
         employee.setPayClassification(new CommisionnedClassification(2000.0,0.20));
         employee.setPayMethod(new MailMethod("toto@gmail.com"));
         employee.setPaySchedule(new DoubleWeekSchedule());
-        Calendar date = new GregorianCalendar(2019,10,1);
-        Calendar nextDate = new GregorianCalendar(2019,10,2);
+        LocalDate date = LocalDate.of(2014, Month.JANUARY, 1);
+        LocalDate nextDate = LocalDate.of(2014, Month.JANUARY, 1);
         PaymentClassification classification= employee.getPayClassification();
         ((CommisionnedClassification)classification).addSaleReceipt(new SalesReceipt(date, 200));
         ((CommisionnedClassification)classification).addSaleReceipt(new SalesReceipt(nextDate, 500));

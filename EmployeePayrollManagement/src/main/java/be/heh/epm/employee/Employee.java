@@ -2,7 +2,10 @@ package be.heh.epm.employee;
 
 import be.heh.epm.classification.PaymentClassification;
 import be.heh.epm.method.PaymentMethod;
+import be.heh.epm.payday.PayCheck;
 import be.heh.epm.schedule.PaymentSchedule;
+
+import java.time.LocalDate;
 
 public class Employee{
     String name;
@@ -58,5 +61,12 @@ public class Employee{
     public String getAdresse() {
         return adresse;
     }
+    public boolean isPayDate(LocalDate date){
+        return this.paySchedule.isPayDate(date);
+    }
 
+    public void payDay(PayCheck pc) {
+        this.payClassification.calculationPay(pc);
+        this.payMethod.pay(pc);
+    }
 }

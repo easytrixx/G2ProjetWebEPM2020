@@ -5,10 +5,10 @@ import be.heh.epm.employee.Command;
 import be.heh.epm.employee.Context;
 import be.heh.epm.employee.Employee;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class AddCommission implements Command {
-    public Calendar getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -24,7 +24,7 @@ public class AddCommission implements Command {
         return sr;
     }
 
-    public void setDate(Calendar date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
@@ -40,11 +40,11 @@ public class AddCommission implements Command {
         this.sr = sr;
     }
 
-    Calendar date;
+    LocalDate date;
     double amount;
     int empId;
     SalesReceipt sr;
-    public AddCommission(Calendar date, double amount, int empId) {
+    public AddCommission(LocalDate date, double amount, int empId) {
         this.date=date;
         this.amount=amount;
         this.empId=empId;

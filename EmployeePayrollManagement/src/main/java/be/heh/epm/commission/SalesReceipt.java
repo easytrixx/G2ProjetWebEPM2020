@@ -1,9 +1,9 @@
 package be.heh.epm.commission;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class SalesReceipt {
-    public Calendar getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -11,9 +11,9 @@ public class SalesReceipt {
         return salesAmount;
     }
 
-    Calendar date;
+    LocalDate date;
     double salesAmount;
-    public SalesReceipt(Calendar date, double salesAmount){
+    public SalesReceipt(LocalDate date, double salesAmount){
         this.date=date;
         this.salesAmount=salesAmount;
     }
