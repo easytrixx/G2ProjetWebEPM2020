@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestPayDayHourlyEmployee" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-12T14:27:15" hostname="DESKTOP-RE18L3H" time="0.015">
+<testsuite name="TestPayDayHourlyEmployee" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-12T15:14:27" hostname="DESKTOP-RE18L3H" time="0.017">
   <properties/>
-  <testcase name="PaySingleHourlyEmployeeWithoutHour" classname="TestPayDayHourlyEmployee" time="0.015"/>
+  <testcase name="PaySingleHourlyEmployeeWithMoreHour" classname="TestPayDayHourlyEmployee" time="0.017"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

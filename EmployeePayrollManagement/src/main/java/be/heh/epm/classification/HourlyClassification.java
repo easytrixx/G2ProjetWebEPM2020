@@ -16,7 +16,13 @@ public class HourlyClassification implements PaymentClassification{
     public double calculationSalary(){
         for(Map.Entry te: listTimeCard.entrySet()){
             TimeCard time=(TimeCard)te.getValue();
-            salary=hoursSalary*time.getHours();
+            if(time.getHours()>8){
+                salary=hoursSalary*8+hoursSalary*(time.getHours()-8)*1.5;
+            }
+            else{
+                salary=hoursSalary*time.getHours();
+            }
+
         }
         return salary;
     }

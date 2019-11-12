@@ -59,4 +59,19 @@ public class TestPayDayHourlyEmployee {
         assertEquals(60,pc.getSalary(),0.1);
         assertEquals("Bank",pc.getField("Disposition"));
     }
+    @Test
+    public void PaySingleHourlyEmployeeWithMoreHour(){
+        int empID = 1;
+        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(empID,"toto","Rue de Nimy",20);
+        hourlyEmployee.execute();
+        AddTimeCard tc=new AddTimeCard(empID,secondFriday,10);
+        tc.execute();
+        PayDay payday = new PayDay(secondFriday);
+        payday.execute();
+        PayCheck pc = payday.getPayCheck(empID);
+        assertNotNull(pc);
+        assertEquals(secondFriday,pc.getDate());
+        assertEquals(220,pc.getSalary(),0.1);
+        assertEquals("Bank",pc.getField("Disposition"));
+    }
 }

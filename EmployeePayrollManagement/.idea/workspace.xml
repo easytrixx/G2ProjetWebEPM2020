@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75ecafe5-05f5-4446-bcb6-c2cf31bf78e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/payday/PayCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/payday/PayDay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestPayDay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/TestPayDayHourlyEmployee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -18,59 +14,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/classification/HourlyClassification.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/classification/HourlyClassification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/classification/PaymentClassification.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/classification/PaymentClassification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/classification/SalariedClassification.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/classification/SalariedClassification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/commission/AddCommission.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/commission/AddCommission.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/commission/CommisionnedClassification.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/commission/CommisionnedClassification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/commission/SalesReceipt.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/commission/SalesReceipt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/employee/AddEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/employee/AddEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/employee/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/employee/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/employee/EmployeeGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/employee/EmployeeGateway.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/hourly/AddHourlyEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/hourly/AddHourlyEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/method/DirectDepositMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/method/DirectDepositMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/method/MailMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/method/MailMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/method/PaymentMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/method/PaymentMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/schedule/DoubleWeekSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/schedule/DoubleWeekSchedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/schedule/MonthlyPaymentSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/schedule/MonthlyPaymentSchedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/schedule/PaymentSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/schedule/PaymentSchedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/schedule/WeeklyPaymentSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/schedule/WeeklyPaymentSchedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/timecard/AddTimeCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/timecard/AddTimeCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/timecard/TimeCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/heh/epm/timecard/TimeCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/InMemoryEmployeeGateway.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/InMemoryEmployeeGateway.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TestAddCommission.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TestAddCommission.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TestAddTimeCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TestAddTimeCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TestEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TestEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestChangeDetails.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestPayDayHourlyEmployee.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestPayDayHourlyEmployee.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestChangeDetails.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestPayDayHourlyEmployee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestPayDayHourlyEmployee.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/classification/HourlyClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/classification/HourlyClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/classification/PaymentClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/classification/PaymentClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/classification/SalariedClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/classification/SalariedClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/commission/AddCommission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/commission/AddCommission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/commission/CommisionnedClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/commission/CommisionnedClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/commission/SalesReceipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/commission/SalesReceipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/employee/AddEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/employee/AddEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/employee/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/employee/EmployeeGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/employee/EmployeeGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/hourly/AddHourlyEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/hourly/AddHourlyEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/method/DirectDepositMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/method/DirectDepositMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/method/MailMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/method/MailMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/method/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/method/PaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/schedule/DoubleWeekSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/schedule/DoubleWeekSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/schedule/MonthlyPaymentSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/schedule/MonthlyPaymentSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/schedule/PaymentSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/schedule/PaymentSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/schedule/WeeklyPaymentSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/schedule/WeeklyPaymentSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/timecard/AddTimeCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/timecard/AddTimeCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/heh/epm/timecard/TimeCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/heh/epm/timecard/TimeCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/InMemoryEmployeeGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InMemoryEmployeeGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestAddCommission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestAddCommission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestAddTimeCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestAddTimeCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestDeleteEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestDeleteEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestPayDayHourlyEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestPayDayHourlyEmployee.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +85,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.TestPayDayHourlyEmployee.PaySingleHourlyEmployeeWithoutHour">
+  <component name="RunManager" selected="Gradle.TestPayDayHourlyEmployee.PaySingleHourlyEmployeeWithMoreHour">
     <configuration name="TestPayDayHourlyEmployee.PaySingleHourlyEmployeeOnWrongDate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -196,6 +146,26 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="TestPayDayHourlyEmployee.PaySingleHourlyEmployeeWithMoreHour" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;TestPayDayHourlyEmployee.PaySingleHourlyEmployeeWithMoreHour&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="TestPayDayHourlyEmployee.PaySingleHourlyEmployeeWithoutHour" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -216,33 +186,13 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestPayDay.PaySingleHourlyEmployeeWithoutHour" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;TestPayDay.PaySingleHourlyEmployeeWithoutHour&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestPayDayHourlyEmployee.PaySingleHourlyEmployeeWithMoreHour" />
+        <item itemvalue="Gradle.TestPayDayHourlyEmployee.PaySingleHourlyEmployeeWithHour" />
         <item itemvalue="Gradle.TestPayDayHourlyEmployee.PaySingleHourlyEmployeeWithoutHour" />
         <item itemvalue="Gradle.TestPayDayHourlyEmployee.PaySingleHourlyEmployeeOnWrongDate" />
-        <item itemvalue="Gradle.TestPayDayHourlyEmployee.PaySingleHourlyEmployeeWithHour" />
         <item itemvalue="Gradle.TestPayDayHourlyEmployee.PaySingleHourlyEmployeeWithHourMultiple" />
-        <item itemvalue="Gradle.TestPayDay.PaySingleHourlyEmployeeWithoutHour" />
       </list>
     </recent_temporary>
   </component>
