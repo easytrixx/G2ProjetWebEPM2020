@@ -24,26 +24,21 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="703c7b92-1a4d-434d-8ec2-4092683595b2">
-        <schema name="pg_catalog" object-types="table" />
-        <schema name="public" object-types="table, sequence, function, view" />
-      </connection>
       <connection connection-id="5d65a5b5-0441-4f5d-aaa0-e36b0eb3bd1f">
-        <schema name="pg_catalog" object-types="table, function" />
-        <schema name="public" object-types="table, sequence, constraint, index, column, dataset trigger, function, view" />
+        <schema name="public" object-types="view, table" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="703c7b92-1a4d-434d-8ec2-4092683595b2">
-      <console name="ConnectionPG" type="STANDARD" schema="public" session="Main"><![CDATA[DROP TABLE employee;]]></console>
+      <console name="ConnectionPG" type="STANDARD" schema="public" session="Main">DROP TABLE employee;</console>
       <console name="ConnectionPg" type="STANDARD" schema="" session="Main" />
     </connection>
     <connection id="1526e3af-d258-4b92-9200-3de46135db46">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
     <connection id="5d65a5b5-0441-4f5d-aaa0-e36b0eb3bd1f">
-      <console name="payroll" type="STANDARD" schema="public" session="Main"><![CDATA[CREATE TABLE employee]]></console>
+      <console name="payroll" type="STANDARD" schema="public" session="Main">CREATE TABLE employee</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
