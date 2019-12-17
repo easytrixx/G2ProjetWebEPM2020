@@ -1,29 +1,27 @@
-CREATE TABLE employee(
+CREATE TABLE IF NOT EXISTS employee  (
     id SERIAL primary key not null,
     nom text,
     address text,
     salary int,
     type text,
     method text,
-    schedule text,
-    emp
-
+    schedule text
 );
-CREATE TABLE mailMethod(
+CREATE TABLE IF NOT EXISTS mailMethod (
     ID SERIAL primary key not null,
     MAIL varchar[50]
 );
-CREATE TABLE directMethod(
+CREATE TABLE IF NOT EXISTS directMethod(
     ID SERIAL primary key not null,
     FOREIGN KEY (ID) REFERENCES employee(ID)
 );
-CREATE TABLE sell(
+CREATE TABLE IF NOT EXISTS sell(
     ID SERIAL primary key not null,
     NAME varchar[50],
-    FOREIGN KEY (ID) REFERENCES employe(ID)
+    FOREIGN KEY (ID) REFERENCES employee(ID)
 );
-create table salary(
+create table IF NOT EXISTS salary(
     ID serial primary key not null,
     salary int,
-    foreign key (id) references employe(id)
+    foreign key (id) references employee(id)
 );

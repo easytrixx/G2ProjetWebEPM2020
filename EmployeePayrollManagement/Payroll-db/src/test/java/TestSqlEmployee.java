@@ -28,7 +28,7 @@ public class TestSqlEmployee {
     public void setup() {
         Context.emp = new SqlEmployeeGateway();
         cleanTableEmploye();
-        e = new Employee(51, "tototo", "Av. Maistriau");
+        e = new Employee(54, "tototo", "Av. Maistriau");
         e.setPayClassification(new SalariedClassification(2000));
         e.setPaySchedule(new MonthlyPaymentSchedule());
         e.setPayMethod(new DirectDepositMethod("ING", "BE-123-456-789"));
@@ -39,8 +39,6 @@ public class TestSqlEmployee {
             ex.printStackTrace();
         }
     }
-
-
     private void cleanTableEmploye(){
         DatabaseConnectionManager objetmanager = new DatabaseConnectionManager("localhost","postgres","postgres", "root");
         try {
@@ -57,13 +55,13 @@ public class TestSqlEmployee {
     }
     @Test
     public void addEmployee(){
-        Context.emp.save(51,e);
+        Context.emp.save(54,e);
         try{
             String select="SELECT * FROM employee";
             PreparedStatement statement=connection.prepareStatement(select);
             ResultSet rs=statement.executeQuery();
             while(rs.next()){
-                assertEquals(51,rs.getInt("id"));
+                assertEquals(54,rs.getInt("id"));
                 assertEquals("tototo",rs.getString("nom"));
                 assertEquals("Av. Maistriau",rs.getString("address"));
                 assertEquals("par mois",rs.getString("schedule"));
@@ -73,12 +71,5 @@ public class TestSqlEmployee {
         } catch(SQLException ex){
             ex.printStackTrace();
         }
-    }
-    @Test
-    public void deleteEmployee(){
-        addEmployee();
-        Context.emp.deleteEmployed(51);
-        int id=Context.emp.get
-        assertNull(id);
     }
 }
