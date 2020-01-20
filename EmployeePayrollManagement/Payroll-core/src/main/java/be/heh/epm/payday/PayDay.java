@@ -16,7 +16,7 @@ public class PayDay implements Command {
     }
     @Override
     public void execute() {
-        Map listeEmployee= Context.emp.getAllEmployee();
+        Map listeEmployee= Context.emp.getAllEmployees();
         listeEmployee.forEach((k, v) -> {
             int id=(int)k;
             Employee e=(Employee)v;

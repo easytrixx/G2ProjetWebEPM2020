@@ -12,13 +12,20 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Payroll-core" />
             <option value="$PROJECT_DIR$/Payroll-db" />
+            <option value="$PROJECT_DIR$/test" />
           </set>
         </option>
+        <option name="useAutoImport" value="true" />
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="C:\Users\Clement Masse\IdeaProjects\G2ProjetWebEPM2020\EmployeePayrollManagement\payroll-web" />
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="C:\Users\Clement Masse\IdeaProjects\G2ProjetWebEPM2020\EmployeePayrollManagement\payrollweb" />
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>

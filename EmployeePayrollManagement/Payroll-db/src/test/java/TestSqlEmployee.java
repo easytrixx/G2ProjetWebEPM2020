@@ -4,8 +4,8 @@ import be.heh.epm.employee.Context;
 import be.heh.epm.employee.Employee;
 import be.heh.epm.method.DirectDepositMethod;
 import be.heh.epm.schedule.MonthlyPaymentSchedule;
-import heh.DatabaseConnectionManager;
-import heh.SqlEmployeeGateway;
+import be.heh.epm.DatabaseConnectionManager;
+import be.heh.epm.SqlEmployeeGateway;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,8 +13,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNull;
@@ -28,14 +26,14 @@ public class TestSqlEmployee {
     public void setup() {
         Context.emp = new SqlEmployeeGateway();
         cleanTableEmploye();
-        e = new Employee(54, "tototo", "Av. Maistriau");
+        e = new Employee(55, "tototo", "Av. Maistriau");
         e.setPayClassification(new SalariedClassification(2000));
         e.setPaySchedule(new MonthlyPaymentSchedule());
         e.setPayMethod(new DirectDepositMethod("ING", "BE-123-456-789"));
         DatabaseConnectionManager objet = new DatabaseConnectionManager("localhost", "postgres", "postgres", "root");
         try {
             connection = objet.getConnection();
-        } catch (SQLException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
     }
@@ -49,7 +47,7 @@ public class TestSqlEmployee {
             connection.close();
 
         }
-        catch (SQLException ex){
+        catch (SQLException | ClassNotFoundException ex){
             ex.printStackTrace();
         }
     }
@@ -61,7 +59,7 @@ public class TestSqlEmployee {
             PreparedStatement statement=connection.prepareStatement(select);
             ResultSet rs=statement.executeQuery();
             while(rs.next()){
-                assertEquals(54,rs.getInt("id"));
+                assertEquals(55,rs.getInt("id"));
                 assertEquals("tototo",rs.getString("nom"));
                 assertEquals("Av. Maistriau",rs.getString("address"));
                 assertEquals("par mois",rs.getString("schedule"));

@@ -1,4 +1,6 @@
 rootProject.name = 'untitled'
 include 'Payroll-core'
 include 'Payroll-db'
+include 'Payroll-core'
+include 'test'
 

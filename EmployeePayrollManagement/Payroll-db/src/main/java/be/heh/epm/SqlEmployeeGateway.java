@@ -1,4 +1,4 @@
-package heh;
+package be.heh.epm;
 
 
 import be.heh.epm.employee.Employee;
@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +31,7 @@ public class SqlEmployeeGateway implements EmployeeGateway {
             requetePrepa.setString(5, employee.getPaySchedule().toString());
             requetePrepa.execute();
             connection.close();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -44,13 +45,13 @@ public class SqlEmployeeGateway implements EmployeeGateway {
             requetePrepa.setInt(1, id);
             requetePrepa.execute();
             connection.close();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    public Map getAllEmployee() {
+    public Map getAllEmployees() {
         Map hm = new HashMap();
         DatabaseConnectionManager objet = new DatabaseConnectionManager("localhost", "postgres", "postgres", "root");
         String SQL = "Select * FROM employee";
@@ -63,7 +64,26 @@ public class SqlEmployeeGateway implements EmployeeGateway {
             }
 
             connection.close();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return hm;
+    }
+
+    @Override
+    public ArrayList<Employee> receiveAllEmployee() {
+        ArrayList<Employee> hm=new ArrayList<>();
+        DatabaseConnectionManager objet = new DatabaseConnectionManager("localhost", "postgres", "postgres", "root");
+        String SQL= "Select * FROM employee";
+        try {
+            Connection connection = objet.getConnection();
+            PreparedStatement requetePrepa = connection.prepareStatement(SQL);
+            ResultSet rs = requetePrepa.executeQuery();
+            while (rs.next()) {
+                hm.add(new Employee(rs.getInt("id"),rs.getString("nom"),rs.getString("address")));
+            }
+            connection.close();
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return hm;
