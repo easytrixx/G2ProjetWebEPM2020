@@ -2,10 +2,11 @@ package be.heh.epm.classification;
 
 import be.heh.epm.payday.PayCheck;
 
-public class SalariedClassification implements PaymentClassification{
+public class SalariedClassification implements PaymentClassification {
     double salary;
-    public SalariedClassification(double salary){
-        this.salary=salary;
+
+    public SalariedClassification(double salary) {
+        this.salary = salary;
     }
 
     @Override
@@ -21,7 +22,8 @@ public class SalariedClassification implements PaymentClassification{
     public double getSalary() {
         return salary;
     }
-    public String toString(){
+
+    public String toString() {
         return "salaried";
     }
 }

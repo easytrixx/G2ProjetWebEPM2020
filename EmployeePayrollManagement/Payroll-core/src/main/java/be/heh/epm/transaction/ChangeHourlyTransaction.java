@@ -9,8 +9,7 @@ public class ChangeHourlyTransaction extends ChangeClassificationTransaction {
 
     private double Salary;
 
-    public ChangeHourlyTransaction(int empId, double salary)
-    {
+    public ChangeHourlyTransaction(int empId, double salary) {
         super(empId);
         this.Salary = salary;
     }

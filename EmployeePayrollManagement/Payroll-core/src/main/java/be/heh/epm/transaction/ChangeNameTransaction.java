@@ -6,8 +6,7 @@ public class ChangeNameTransaction extends ChangeEmployeeTransaction {
 
     private String Name;
 
-    public ChangeNameTransaction(int EmpID, String name)
-    {
+    public ChangeNameTransaction(int EmpID, String name) {
         super(EmpID);
         this.Name = name;
     }

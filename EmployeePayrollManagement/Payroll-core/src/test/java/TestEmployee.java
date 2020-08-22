@@ -22,30 +22,32 @@ import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 
-
 public class TestEmployee {
     private Employee employee;
+
     @Before
     public void setUp() throws Exception {
-        employee = new Employee(100,"toto","av maistriau");
+        employee = new Employee(100, "toto", "av maistriau");
     }
+
     @Test
     public void createSalariedEmployee() {
 
         employee.setPayClassification(new SalariedClassification(1000));
-        employee.setPayMethod(new DirectDepositMethod("ING","be80-4444-444"));
+        employee.setPayMethod(new DirectDepositMethod("ING", "be80-4444-444"));
         employee.setPaySchedule(new MonthlyPaymentSchedule());
 
-        assertEquals(1000.0,employee.calculatePay(),0.01);
+        assertEquals(1000.0, employee.calculatePay(), 0.01);
 
         PaymentSchedule ps = employee.getPaySchedule();
         assertTrue(ps instanceof MonthlyPaymentSchedule);
 
 
         PaymentMethod pm = employee.getPayMethod();
-        assertEquals("direct deposit into ING : be80-4444-444",pm.toString());
+        assertEquals("direct deposit into ING : be80-4444-444", pm.toString());
 
     }
+
     @Test
     public void createHourlyEmployee() {
 
@@ -55,34 +57,35 @@ public class TestEmployee {
 
         LocalDate date = LocalDate.of(2014, Month.JANUARY, 1);
         LocalDate nextDate = LocalDate.of(2014, Month.JANUARY, 2);
-        PaymentClassification classification= employee.getPayClassification();
-        ((HourlyClassification)classification).addTimeCard(new TimeCard(date, 8.0));
-        ((HourlyClassification)classification).addTimeCard(new TimeCard(nextDate, 10.0));
+        PaymentClassification classification = employee.getPayClassification();
+        ((HourlyClassification) classification).addTimeCard(new TimeCard(date, 8.0));
+        ((HourlyClassification) classification).addTimeCard(new TimeCard(nextDate, 10.0));
 
-        assertEquals(200,employee.calculatePay(),0.01);
+        assertEquals(200, employee.calculatePay(), 0.01);
 
         PaymentSchedule ps = employee.getPaySchedule();
         assertTrue(ps instanceof WeeklyPaymentSchedule);
 
         PaymentMethod pm = employee.getPayMethod();
-        assertEquals("mail : toto@gmail.com",pm.toString());
+        assertEquals("mail : toto@gmail.com", pm.toString());
     }
+
     @Test
-    public void createCommisionnedEmployee(){
-        employee.setPayClassification(new CommisionnedClassification(2000.0,0.20));
+    public void createCommisionnedEmployee() {
+        employee.setPayClassification(new CommisionnedClassification(2000.0, 0.20));
         employee.setPayMethod(new MailMethod("toto@gmail.com"));
         employee.setPaySchedule(new DoubleWeekSchedule());
         LocalDate date = LocalDate.of(2014, Month.JANUARY, 1);
         LocalDate nextDate = LocalDate.of(2014, Month.JANUARY, 1);
-        PaymentClassification classification= employee.getPayClassification();
-        ((CommisionnedClassification)classification).addSaleReceipt(new SalesReceipt(date, 200));
-        ((CommisionnedClassification)classification).addSaleReceipt(new SalesReceipt(nextDate, 500));
-        assertEquals(2140.0,employee.calculatePay(),0.01);
+        PaymentClassification classification = employee.getPayClassification();
+        ((CommisionnedClassification) classification).addSaleReceipt(new SalesReceipt(date, 200));
+        ((CommisionnedClassification) classification).addSaleReceipt(new SalesReceipt(nextDate, 500));
+        assertEquals(2140.0, employee.calculatePay(), 0.01);
 
         PaymentSchedule ps = employee.getPaySchedule();
         assertTrue(ps instanceof DoubleWeekSchedule);
 
         PaymentMethod pm = employee.getPayMethod();
-        assertEquals("mail : toto@gmail.com",pm.toString());
+        assertEquals("mail : toto@gmail.com", pm.toString());
     }
 }

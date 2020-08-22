@@ -7,9 +7,10 @@ import be.heh.epm.schedule.PaymentSchedule;
 
 public class AddSalariedEmployee extends AddEmployee {
     double salary;
+
     public AddSalariedEmployee(int empID, String name, String adresse, double salary) {
-        super(empID,name,adresse);
-        this.salary=salary;
+        super(empID, name, adresse);
+        this.salary = salary;
     }
 
     @Override

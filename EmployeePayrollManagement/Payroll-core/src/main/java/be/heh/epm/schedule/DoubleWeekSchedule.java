@@ -2,7 +2,7 @@ package be.heh.epm.schedule;
 
 import java.time.LocalDate;
 
-public class DoubleWeekSchedule implements PaymentSchedule{
+public class DoubleWeekSchedule implements PaymentSchedule {
     @Override
     public String choiceDate() {
         return "LOL";
@@ -12,7 +12,8 @@ public class DoubleWeekSchedule implements PaymentSchedule{
     public boolean isPayDate(LocalDate date) {
         return false;
     }
-    public String toString(){
+
+    public String toString() {
         return "2 semaines";
     }
 }

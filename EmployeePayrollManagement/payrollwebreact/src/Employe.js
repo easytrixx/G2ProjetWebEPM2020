@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 
 
-class Employe extends React.Component{
+class Employe extends React.Component {
 
-    state  = { employe : []};
+    state = {employe: []};
 
     componentDidMount() {
         axios.get("http://localhost:8080/employeList")
@@ -14,8 +14,8 @@ class Employe extends React.Component{
             })
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <table className="table table-hover">
                 <thead>
                 <tr>
@@ -24,14 +24,14 @@ class Employe extends React.Component{
                     <th scope="col">Addresse</th>
                     <th scope="col">Type d'employe</th>
                     <th scope="col">Moyen de payement</th>
-                    <th scope="col">Dâte de  payement</th>
+                    <th scope="col">Dâte de payement</th>
 
                 </tr>
                 </thead>
                 <tbody>
-                {this.state.employe.map((element,key) => {
+                {this.state.employe.map((element, key) => {
                     return <tr>
-                        <td>{key+1}</td>
+                        <td>{key + 1}</td>
                         <td>{element.name}</td>
                         <td>{element.address}</td>
                         <td>{element.type}</td>

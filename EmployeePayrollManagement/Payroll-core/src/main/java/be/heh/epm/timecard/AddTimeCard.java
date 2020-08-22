@@ -13,6 +13,7 @@ public class AddTimeCard implements Command {
     LocalDate date;
     double hours;
     TimeCard card;
+
     public void setEmpId(int empId) {
         this.empId = empId;
     }
@@ -49,24 +50,23 @@ public class AddTimeCard implements Command {
     public void execute() {
         Employee e = Context.emp.getEmployee(empId);
         PaymentClassification ps = e.getPayClassification();
-        if(e!=null) {
-            if(ps instanceof HourlyClassification){
-                HourlyClassification u=(HourlyClassification) ps;
-                card=new TimeCard(date,hours);
+        if (e != null) {
+            if (ps instanceof HourlyClassification) {
+                HourlyClassification u = (HourlyClassification) ps;
+                card = new TimeCard(date, hours);
                 u.addTimeCard(card);
-                Context.emp.save(e.getId(),e);
-            }
-            else{
+                Context.emp.save(e.getId(), e);
+            } else {
                 throw new IllegalStateException("Pas le bon type");
             }
-        }
-        else{
+        } else {
             throw new NullPointerException("Aucun objet");
         }
     }
-    public AddTimeCard(int id, LocalDate date, double hours){
-        this.date=date;
-        this.hours=hours;
+
+    public AddTimeCard(int id, LocalDate date, double hours) {
+        this.date = date;
+        this.hours = hours;
         this.empId = id;
     }
 }

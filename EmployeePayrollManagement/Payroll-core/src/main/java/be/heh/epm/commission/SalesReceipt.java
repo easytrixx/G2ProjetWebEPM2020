@@ -13,8 +13,9 @@ public class SalesReceipt {
 
     LocalDate date;
     double salesAmount;
-    public SalesReceipt(LocalDate date, double salesAmount){
-        this.date=date;
-        this.salesAmount=salesAmount;
+
+    public SalesReceipt(LocalDate date, double salesAmount) {
+        this.date = date;
+        this.salesAmount = salesAmount;
     }
 }

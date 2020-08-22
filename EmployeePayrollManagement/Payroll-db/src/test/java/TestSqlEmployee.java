@@ -30,43 +30,44 @@ public class TestSqlEmployee {
         e.setPayClassification(new SalariedClassification(2000));
         e.setPaySchedule(new MonthlyPaymentSchedule());
         e.setPayMethod(new DirectDepositMethod("ING", "BE-123-456-789"));
-        DatabaseConnectionManager objet = new DatabaseConnectionManager("localhost", "postgres", "postgres", "root");
+        DatabaseConnectionManager objet = new DatabaseConnectionManager("localhost", "postgres", "postgres", "test123");
         try {
             connection = objet.getConnection();
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
-    private void cleanTableEmploye(){
-        DatabaseConnectionManager objetmanager = new DatabaseConnectionManager("localhost","postgres","postgres", "root");
+
+    private void cleanTableEmploye() {
+        DatabaseConnectionManager objetmanager = new DatabaseConnectionManager("localhost", "postgres", "postgres", "test123");
         try {
             String delete = "DELETE FROM employee";
             Connection connection = objetmanager.getConnection();
-            PreparedStatement statement  = connection.prepareStatement(delete);
+            PreparedStatement statement = connection.prepareStatement(delete);
             statement.execute();
             connection.close();
 
-        }
-        catch (SQLException | ClassNotFoundException ex){
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
+
     @Test
-    public void addEmployee(){
-        Context.emp.save(54,e);
-        try{
-            String select="SELECT * FROM employee";
-            PreparedStatement statement=connection.prepareStatement(select);
-            ResultSet rs=statement.executeQuery();
-            while(rs.next()){
-                assertEquals(55,rs.getInt("id"));
-                assertEquals("tototo",rs.getString("nom"));
-                assertEquals("Av. Maistriau",rs.getString("address"));
-                assertEquals("par mois",rs.getString("schedule"));
-                assertEquals("Bank",rs.getString("method"));
-                assertEquals("salaried",rs.getString("type"));
+    public void addEmployee() {
+        Context.emp.save(54, e);
+        try {
+            String select = "SELECT * FROM employee";
+            PreparedStatement statement = connection.prepareStatement(select);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                assertEquals(3, rs.getInt("id"));
+                assertEquals("tototo", rs.getString("nom"));
+                assertEquals("Av. Maistriau", rs.getString("address"));
+                assertEquals("par mois", rs.getString("schedule"));
+                assertEquals("Bank", rs.getString("methode"));
+                assertEquals("salaried", rs.getString("type"));
             }
-        } catch(SQLException ex){
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }

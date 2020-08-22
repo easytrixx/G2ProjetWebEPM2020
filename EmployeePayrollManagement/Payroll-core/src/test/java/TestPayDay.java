@@ -13,32 +13,33 @@ import static org.junit.Assert.assertNull;
 
 public class TestPayDay {
     @Before
-    public void setup(){
+    public void setup() {
         TestSetup.setupContext();
     }
 
     @Test
-    public void PaySingleSalariedEmployee(){
+    public void PaySingleSalariedEmployee() {
         int empID = 1;
-        AddSalariedEmployee salariedEmployee = new AddSalariedEmployee(empID,"toto","Rue de Nimy",1400.0);
+        AddSalariedEmployee salariedEmployee = new AddSalariedEmployee(empID, "toto", "Rue de Nimy", 1400.0);
         salariedEmployee.execute();
 
-        LocalDate date=LocalDate.of(2019, Month.NOVEMBER, 30);
+        LocalDate date = LocalDate.of(2019, Month.NOVEMBER, 30);
         PayDay payday = new PayDay(date);
         payday.execute();
         PayCheck pc = payday.getPayCheck(empID);
         assertNotNull(pc);
-        assertEquals(date,pc.getDate());
-        assertEquals(1400.0,pc.getSalary(),0.1);
-        assertEquals("Bank",pc.getField("Disposition"));
+        assertEquals(date, pc.getDate());
+        assertEquals(1400.0, pc.getSalary(), 0.1);
+        assertEquals("Bank", pc.getField("Disposition"));
 
     }
+
     @Test
-    public void PaySingleSalariedEmployeeOnWrongDate(){
+    public void PaySingleSalariedEmployeeOnWrongDate() {
         int empID = 5;
-        AddSalariedEmployee salariedEmployee = new AddSalariedEmployee(empID,"toto","Rue de Nimy",1400.0);
+        AddSalariedEmployee salariedEmployee = new AddSalariedEmployee(empID, "toto", "Rue de Nimy", 1400.0);
         salariedEmployee.execute();
-        LocalDate date=LocalDate.of(2019, Month.NOVEMBER, 28);
+        LocalDate date = LocalDate.of(2019, Month.NOVEMBER, 28);
         PayDay payday = new PayDay(date);
         payday.execute();
         PayCheck pc = payday.getPayCheck(empID);

@@ -21,15 +21,13 @@ import java.util.ArrayList;
 public class UserController {
 
 
-
     @GetMapping(value = "/bonjour")
-    public String bonjour(){
+    public String bonjour() {
         return "bonjour";
     }
 
 
-
-    @GetMapping(value  ="/employeList")
+    @GetMapping(value = "/employeList")
     public String listEmploye() {
 
         SqlEmployeeGateway re = new SqlEmployeeGateway();
@@ -39,48 +37,40 @@ public class UserController {
         return reponse;
     }
 
-    @RequestMapping(value="/addEmploye", method = RequestMethod.POST)
-    public String addEmploye(@RequestParam (value="nom") String nom, @RequestParam(value ="addresse") String address,
-                             @RequestParam(value="method") String method, @RequestParam(value = "schedule") String schedule, @RequestParam(value = "type") String type){
-        int id=1;
+    @RequestMapping(value = "/addEmploye", method = RequestMethod.POST)
+    public String addEmploye(@RequestParam(value = "nom") String nom, @RequestParam(value = "addresse") String address,
+                             @RequestParam(value = "method") String method, @RequestParam(value = "schedule") String schedule, @RequestParam(value = "type") String type) {
+        int id = 1;
         Employee e;
         Context.emp = new SqlEmployeeGateway();
-        e = new Employee(id,nom,address);
-        if(method.equals("direct"))
-        {
-            e.setPayMethod(new DirectDepositMethod("ING","BE-859858-85"));
-        }
-        else if(method.equals("mail")){
-            e.setPayMethod(new MailMethod(nom.toString()+"@hotmail.com"));
-        }
-        else{
+        e = new Employee(id, nom, address);
+        if (method.equals("direct")) {
+            e.setPayMethod(new DirectDepositMethod("ING", "BE-859858-85"));
+        } else if (method.equals("mail")) {
+            e.setPayMethod(new MailMethod(nom.toString() + "@hotmail.com"));
+        } else {
 
         }
-        if(schedule.equals("mois")){
+        if (schedule.equals("mois")) {
             e.setPaySchedule(new MonthlyPaymentSchedule());
-        }
-        else if(schedule.equals("semaine")){
+        } else if (schedule.equals("semaine")) {
             e.setPaySchedule(new WeeklyPaymentSchedule());
-        }
-        else if(schedule.equals("2semaines")){
+        } else if (schedule.equals("2semaines")) {
             e.setPaySchedule(new DoubleWeekSchedule());
+        } else {
         }
-        else{}
-        if(type.equals("salarie")){
+        if (type.equals("salarie")) {
             e.setPayClassification(new SalariedClassification(2000));
-        }
-        else if(type.equals("heure")){
+        } else if (type.equals("heure")) {
             e.setPayClassification(new HourlyClassification(50));
-        }
-        else if(type.equals("commission")){
-            e.setPayClassification(new CommisionnedClassification(5000,20));
-        }
-        else{
+        } else if (type.equals("commission")) {
+            e.setPayClassification(new CommisionnedClassification(5000, 20));
+        } else {
 
         }
-        Context.emp.save(id,e);
+        Context.emp.save(id, e);
 
-        return " Nom : " +nom + " address :  "+ address + " method : "  + method + " type de payement : " + schedule + " type : " + type;
+        return " Nom : " + nom + " address :  " + address + " method : " + method + " type de payement : " + schedule + " type : " + type;
 
     }
 

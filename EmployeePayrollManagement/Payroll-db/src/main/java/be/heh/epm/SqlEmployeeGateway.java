@@ -17,13 +17,14 @@ public class SqlEmployeeGateway implements EmployeeGateway {
     public Employee getEmployee(int id) {
         return null;
     }
+
     @Override
     public void save(int id, Employee employee) {
-        DatabaseConnectionManager objet = new DatabaseConnectionManager("localhost", "postgres", "postgres", "root");
+        DatabaseConnectionManager objet = new DatabaseConnectionManager("localhost", "postgres", "postgres", "test123");
 
         try {
             Connection connection = objet.getConnection();
-            PreparedStatement requetePrepa = connection.prepareStatement("INSERT INTO employee(nom,address,type,method,schedule) VALUES(?,?,?,?,?)");
+            PreparedStatement requetePrepa = connection.prepareStatement("INSERT INTO employee(nom,address,type,methode,schedule) VALUES(?,?,?,?,?)");
             requetePrepa.setString(1, employee.getName());
             requetePrepa.setString(2, employee.getAdresse());
             requetePrepa.setString(3, employee.getPayClassification().toString());
@@ -31,7 +32,7 @@ public class SqlEmployeeGateway implements EmployeeGateway {
             requetePrepa.setString(5, employee.getPaySchedule().toString());
             requetePrepa.execute();
             connection.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -45,7 +46,7 @@ public class SqlEmployeeGateway implements EmployeeGateway {
             requetePrepa.setInt(1, id);
             requetePrepa.execute();
             connection.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -64,7 +65,7 @@ public class SqlEmployeeGateway implements EmployeeGateway {
             }
 
             connection.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return hm;
@@ -72,18 +73,18 @@ public class SqlEmployeeGateway implements EmployeeGateway {
 
     @Override
     public ArrayList<Employee> receiveAllEmployee() {
-        ArrayList<Employee> hm=new ArrayList<>();
+        ArrayList<Employee> hm = new ArrayList<>();
         DatabaseConnectionManager objet = new DatabaseConnectionManager("localhost", "postgres", "postgres", "root");
-        String SQL= "Select * FROM employee";
+        String SQL = "Select * FROM employee";
         try {
             Connection connection = objet.getConnection();
             PreparedStatement requetePrepa = connection.prepareStatement(SQL);
             ResultSet rs = requetePrepa.executeQuery();
             while (rs.next()) {
-                hm.add(new Employee(rs.getInt("id"),rs.getString("nom"),rs.getString("address")));
+                hm.add(new Employee(rs.getInt("id"), rs.getString("nom"), rs.getString("address")));
             }
             connection.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return hm;

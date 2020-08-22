@@ -9,8 +9,7 @@ public class ChangeSalariedTransaction extends ChangeClassificationTransaction {
 
     private double Salary;
 
-    public ChangeSalariedTransaction(int empID, double salary)
-    {
+    public ChangeSalariedTransaction(int empID, double salary) {
         super(empID);
         this.Salary = salary;
     }

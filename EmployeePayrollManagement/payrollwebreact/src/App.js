@@ -10,8 +10,8 @@ import {
 } from "react-router-dom";
 
 
-import Employe from './component/Employe';
-import AddEmploye from "./component/AddEmploye";
+import Employe from './Employe';
+import AddEmploye from "./AddEmploye";
 
 function App() {
     return (
@@ -26,10 +26,11 @@ function App() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item active">
-                                <Link to="/Employe" className="nav-link">Personnel <span className="sr-only">(current)</span></Link>
+                                <Link to="/Employe" className="nav-link">Personnel <span
+                                    className="sr-only">(current)</span></Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/AddEmploye" className="nav-link" >Ajouter un membre</Link>
+                                <Link to="/AddEmploye" className="nav-link">Ajouter un membre</Link>
                             </li>
 
 
@@ -38,17 +39,16 @@ function App() {
                 </nav>
                 <Switch>
                     <Route path="/Employe">
-                        <Employe />
+                        <Employe/>
 
 
                     </Route>
 
                     <Route path="/AddEmploye">
-                        <AddEmploye />
+                        <AddEmploye/>
 
                     </Route>
                 </Switch>
-
 
 
             </div>

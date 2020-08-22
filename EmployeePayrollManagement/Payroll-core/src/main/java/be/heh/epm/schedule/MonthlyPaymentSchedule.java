@@ -11,16 +11,16 @@ public class MonthlyPaymentSchedule implements PaymentSchedule {
 
     @Override
     public boolean isPayDate(LocalDate date) {
-        YearMonth month= YearMonth.from(date);
-        LocalDate end=month.atEndOfMonth();
-        if(date.isEqual(end)){
+        YearMonth month = YearMonth.from(date);
+        LocalDate end = month.atEndOfMonth();
+        if (date.isEqual(end)) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
-    public String toString(){
+
+    public String toString() {
         return "par mois";
     }
 }

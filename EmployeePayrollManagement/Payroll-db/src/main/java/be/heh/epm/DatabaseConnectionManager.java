@@ -15,8 +15,8 @@ public class DatabaseConnectionManager {
         this.properties.setProperty("user", username);
         this.properties.setProperty("password", password);
     }
-    public Connection getConnection() throws SQLException, ClassNotFoundException {
-        Class.forName("org.postgresql.Driver");
-        return DriverManager.getConnection(this.url,this.properties);
+
+    public Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(this.url, this.properties);
     }
 }

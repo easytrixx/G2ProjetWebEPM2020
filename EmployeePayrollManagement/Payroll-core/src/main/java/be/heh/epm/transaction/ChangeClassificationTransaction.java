@@ -6,8 +6,7 @@ import be.heh.epm.schedule.PaymentSchedule;
 
 public abstract class ChangeClassificationTransaction extends ChangeEmployeeTransaction {
 
-    public ChangeClassificationTransaction(int Empid)
-    {
+    public ChangeClassificationTransaction(int Empid) {
         super(Empid);
     }
 

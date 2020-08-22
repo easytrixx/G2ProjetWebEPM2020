@@ -13,64 +13,69 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 public class TestPayDayHourlyEmployee {
-    private final LocalDate firstFriday=LocalDate.of(2019, Month.NOVEMBER, 1);
-    private final LocalDate secondFriday=LocalDate.of(2019, Month.NOVEMBER, 8);
-    private final LocalDate wrongDate=LocalDate.of(2019, Month.NOVEMBER, 2);
+    private final LocalDate firstFriday = LocalDate.of(2019, Month.NOVEMBER, 1);
+    private final LocalDate secondFriday = LocalDate.of(2019, Month.NOVEMBER, 8);
+    private final LocalDate wrongDate = LocalDate.of(2019, Month.NOVEMBER, 2);
+
     @Before
-    public void setup(){
+    public void setup() {
         TestSetup.setupContext();
     }
+
     @Test
-    public void PaySingleHourlyEmployeeWithoutHour(){
+    public void PaySingleHourlyEmployeeWithoutHour() {
         int empID = 1;
-        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(empID,"toto","Rue de Nimy",20);
+        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(empID, "toto", "Rue de Nimy", 20);
         hourlyEmployee.execute();
         PayDay payday = new PayDay(firstFriday);
         payday.execute();
         PayCheck pc = payday.getPayCheck(empID);
         assertNotNull(pc);
-        assertEquals(firstFriday,pc.getDate());
-        assertEquals(0,pc.getSalary(),0.1);
-        assertEquals("Bank",pc.getField("Disposition"));
+        assertEquals(firstFriday, pc.getDate());
+        assertEquals(0, pc.getSalary(), 0.1);
+        assertEquals("Bank", pc.getField("Disposition"));
     }
+
     @Test
-    public void PaySingleHourlyEmployeeOnWrongDate(){
+    public void PaySingleHourlyEmployeeOnWrongDate() {
         int empID = 5;
-        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(empID,"toto","Rue de Nimy",1400.0);
+        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(empID, "toto", "Rue de Nimy", 1400.0);
         hourlyEmployee.execute();
         PayDay payday = new PayDay(wrongDate);
         payday.execute();
         PayCheck pc = payday.getPayCheck(empID);
         assertNull(pc);
     }
+
     @Test
-    public void PaySingleHourlyEmployeeWithHour(){
+    public void PaySingleHourlyEmployeeWithHour() {
         int empID = 1;
-        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(empID,"toto","Rue de Nimy",20);
+        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(empID, "toto", "Rue de Nimy", 20);
         hourlyEmployee.execute();
-        AddTimeCard tc=new AddTimeCard(empID,secondFriday,3);
+        AddTimeCard tc = new AddTimeCard(empID, secondFriday, 3);
         tc.execute();
         PayDay payday = new PayDay(secondFriday);
         payday.execute();
         PayCheck pc = payday.getPayCheck(empID);
         assertNotNull(pc);
-        assertEquals(secondFriday,pc.getDate());
-        assertEquals(60,pc.getSalary(),0.1);
-        assertEquals("Bank",pc.getField("Disposition"));
+        assertEquals(secondFriday, pc.getDate());
+        assertEquals(60, pc.getSalary(), 0.1);
+        assertEquals("Bank", pc.getField("Disposition"));
     }
+
     @Test
-    public void PaySingleHourlyEmployeeWithMoreHour(){
+    public void PaySingleHourlyEmployeeWithMoreHour() {
         int empID = 1;
-        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(empID,"toto","Rue de Nimy",20);
+        AddHourlyEmployee hourlyEmployee = new AddHourlyEmployee(empID, "toto", "Rue de Nimy", 20);
         hourlyEmployee.execute();
-        AddTimeCard tc=new AddTimeCard(empID,secondFriday,10);
+        AddTimeCard tc = new AddTimeCard(empID, secondFriday, 10);
         tc.execute();
         PayDay payday = new PayDay(secondFriday);
         payday.execute();
         PayCheck pc = payday.getPayCheck(empID);
         assertNotNull(pc);
-        assertEquals(secondFriday,pc.getDate());
-        assertEquals(220,pc.getSalary(),0.1);
-        assertEquals("Bank",pc.getField("Disposition"));
+        assertEquals(secondFriday, pc.getDate());
+        assertEquals(220, pc.getSalary(), 0.1);
+        assertEquals("Bank", pc.getField("Disposition"));
     }
 }

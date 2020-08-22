@@ -10,11 +10,12 @@ import java.util.ArrayList;
 @RestController("/")
 public class EmployeeController {
     @GetMapping
-    public String listEmployee(){
+    public String listEmployee() {
         return "<h1>Test</h1>";
     }
-    @GetMapping(value  ="/employeList")
-    public ArrayList<String> listEmploye(){
+
+    @GetMapping(value = "/employeList")
+    public ArrayList<String> listEmploye() {
 
         /*ReadEmployee re  = new ReadEmployee();
         ArrayList<Employee> liste = re.getAllEmployee();

@@ -6,14 +6,17 @@ public class PayCheck {
     LocalDate date;
     double salary;
     String methode;
-    public PayCheck(LocalDate date){
-        this.date=date;
+
+    public PayCheck(LocalDate date) {
+        this.date = date;
     }
-    public void setPay(double salary){
-        this.salary=salary;
+
+    public void setPay(double salary) {
+        this.salary = salary;
     }
-    public void setDisposition(String s){
-        this.methode=s;
+
+    public void setDisposition(String s) {
+        this.methode = s;
     }
 
     public LocalDate getDate() {

@@ -4,13 +4,14 @@ import be.heh.epm.payday.PayCheck;
 
 public class MailMethod implements PaymentMethod {
     String mail;
-    public MailMethod(String mail){
-        this.mail=mail;
+
+    public MailMethod(String mail) {
+        this.mail = mail;
     }
 
     @Override
     public String toString() {
-        return "mail : "+mail;
+        return "mail : " + mail;
     }
 
     @Override

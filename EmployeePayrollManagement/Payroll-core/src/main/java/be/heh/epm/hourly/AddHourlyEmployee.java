@@ -1,4 +1,5 @@
 package be.heh.epm.hourly;
+
 import be.heh.epm.employee.AddEmployee;
 import be.heh.epm.classification.PaymentClassification;
 import be.heh.epm.classification.HourlyClassification;
@@ -11,10 +12,12 @@ public class AddHourlyEmployee extends AddEmployee {
     }
 
     double hourlyRate;
-    public AddHourlyEmployee(int id, String name, String adresse, double hourlyRate){
-        super(id,name,adresse);
-        this.hourlyRate=hourlyRate;
+
+    public AddHourlyEmployee(int id, String name, String adresse, double hourlyRate) {
+        super(id, name, adresse);
+        this.hourlyRate = hourlyRate;
     }
+
     @Override
     public PaymentClassification makePaymentClassification() {
         return new HourlyClassification(hourlyRate);

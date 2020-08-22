@@ -11,16 +11,16 @@ public class WeeklyPaymentSchedule implements PaymentSchedule {
 
     @Override
     public boolean isPayDate(LocalDate date) {
-        DayOfWeek jour=date.getDayOfWeek();
-        int jourInt=jour.getValue();
-        if(jourInt==5){
+        DayOfWeek jour = date.getDayOfWeek();
+        int jourInt = jour.getValue();
+        if (jourInt == 5) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
-    public String toString(){
+
+    public String toString() {
         return "par semaine";
     }
 }

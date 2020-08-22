@@ -16,9 +16,10 @@ import static java.lang.System.err;
 
 public class TestChangeDetails {
     @Before
-    public void setup(){
+    public void setup() {
         TestSetup.setupContext();
     }
+
     @Test
     public void testChangeAddressTransaction() throws Exception {
         err.println("TestChangeAddressTransaction");
@@ -34,8 +35,7 @@ public class TestChangeDetails {
     }
 
     @Test
-    public void testChangeNameTransaction() throws Exception
-    {
+    public void testChangeNameTransaction() throws Exception {
         err.println("TestChangeNameTransaction");
         int empId = 3;
         AddHourlyEmployee h = new AddHourlyEmployee(empId, "Bob", "Home", 15.25);

@@ -2,12 +2,13 @@ package be.heh.epm.method;
 
 import be.heh.epm.payday.PayCheck;
 
-public class DirectDepositMethod implements PaymentMethod{
+public class DirectDepositMethod implements PaymentMethod {
     String name;
     String account;
-    public DirectDepositMethod(String name, String account){
-        this.name=name;
-        this.account=account;
+
+    public DirectDepositMethod(String name, String account) {
+        this.name = name;
+        this.account = account;
     }
 
     @Override

@@ -9,14 +9,14 @@ import org.junit.Test;
 
 public class TestDeleteEmployee {
     @Before
-    public void setup(){
+    public void setup() {
         TestSetup.setupContext();
     }
 
     @Test
-    public void testDeleteEmployee () {
+    public void testDeleteEmployee() {
         int empId = 1;
-        AddSalariedEmployee t = new AddSalariedEmployee(empId, "Bob","Home",1000.00);
+        AddSalariedEmployee t = new AddSalariedEmployee(empId, "Bob", "Home", 1000.00);
         t.execute();
         Employee e = Context.emp.getEmployee(empId);
         assertNotNull(e);
